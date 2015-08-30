@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet_1: 1
+  pet_2: 1
+  fight_time: 2015-08-30 15:10:01
+
+two:
+  pet_1: 1
+  pet_2: 1
+  fight_time: 2015-08-30 15:10:01
