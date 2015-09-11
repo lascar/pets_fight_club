@@ -17,6 +17,7 @@ module AuthenticationHelper
   end
 
   def authenticate_headers(headers)
+    user = FactoryGirl.create(:user) 
     headers['Accept'] = Mime::JSON
     headers['Content-Type'] = Mime::JSON.to_s
     headers['X-User-Email'] = user.email

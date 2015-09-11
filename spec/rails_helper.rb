@@ -1,4 +1,4 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -50,4 +50,15 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  config.include AuthenticationHelper, type: :controller
+  config.include Devise::TestHelpers, type: :controller
+  config.after(:all) do
+    if Rails.env.test?
+      #FileUtils.rm_rf(Dir["#{Rails.root}/db/test.sqlite3"])
+      #require 'rake'
+      #Rake::Task['db:drop'].invoke
+      File.delete("#{Rails.root}/db/test.sqlite3") if File.exist?("#{Rails.root}/db/test.sqlite3")
+      File.open("#{Rails.root}/db/test.sqlite3", "w") {}
+    end
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830131001) do
+ActiveRecord::Schema.define(version: 20150911144027) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150830131001) do
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "age"
+    t.datetime "birth_day"
     t.string   "pet_type"
     t.integer  "victory_rate", default: 0
     t.datetime "created_at",               null: false
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150830131001) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "authentication_token"
+    t.string   "lang"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
