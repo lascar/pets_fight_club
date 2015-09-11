@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The first rule of Fight Club is: You do talk about Pets Fight Club
 
-Things you may want to cover:
+* Ruby version : ruby 2.2.3
 
-* Ruby version
+* Rails version : 4.2.4
 
-* System dependencies
+* /admin for rails-admin
 
-* Configuration
+* /api/ (version in header like in http://railscasts.com/episodes/350-rest-api-versioning)
 
-* Database creation
+* sqlite for sake of simplicity
 
-* Database initialization
+* some test
 
-* How to run the test suite
+* need to login in /admin in order to access the api
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
