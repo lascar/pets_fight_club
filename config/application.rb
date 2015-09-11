@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module PetsFight
+module PetsFightClub
   class Application < Rails::Application
     config.api_only = false
     config.middleware.use ActionDispatch::Flash
