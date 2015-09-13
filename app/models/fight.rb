@@ -24,7 +24,7 @@ class Fight < ActiveRecord::Base
 
   def verif_pets_users
     if self.pet1.user_id == self.pet2.user_id
-      self.errors[:base] << 'pets owners have to be different'
+      errors.add(:base, :pets_owners_have_to_be_different)
       false 
     end
   end

@@ -2,7 +2,6 @@ class Pet < ActiveRecord::Base
   belongs_to :user
   has_many :fights
   validates :name, presence: true, uniqueness: true
-  accepts_nested_attributes_for :fights
   
   
   def age

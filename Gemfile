@@ -49,8 +49,11 @@ group :development do
   gem 'spring'
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
+end
+
+group :test do
   # convenient matchers
   gem 'shoulda-matchers', require: false
  
