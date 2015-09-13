@@ -14,5 +14,5 @@ The first rule of Fight Club is: You do talk about Pets Fight Club
 
 * some test
 
-* need to login in /admin in order to access the api
+* need to login in /admin in order to access the api (rake db:seed,  admin@example.com/password)
 
