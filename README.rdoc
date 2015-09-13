@@ -1,6 +1,6 @@
 == README
 
-The first rule of Fight Club is: You do talk about Pets Fight Club
+The first rule of Pets Fight Club is: You do talk about Pets Fight Club
 
 * Ruby version : ruby 2.2.3
 
