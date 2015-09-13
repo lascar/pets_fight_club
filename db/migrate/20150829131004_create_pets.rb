@@ -3,7 +3,7 @@ class CreatePets < ActiveRecord::Migration
     create_table :pets do |t|
       t.string :name
       t.references :user, index: true, foreign_key: true
-      t.integer :age
+      t.datetime :birth_day
       t.string :pet_type
       t.integer :victory_rate, :default => 0
 

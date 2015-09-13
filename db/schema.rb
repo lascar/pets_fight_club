@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150911144027) do
   create_table "fights", force: :cascade do |t|
     t.integer  "pet1_id"
     t.integer  "pet2_id"
-    t.integer  "pet_win_id"
+    t.boolean  "win1"
     t.datetime "fight_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
