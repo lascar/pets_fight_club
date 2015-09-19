@@ -5,7 +5,7 @@ class ApiConstraints
   end
 
   def matches?(request)
-    header = "application/vnd.petsFight.v#{@version}"
+    header = "application/vnd.robotsFight.v#{@version}"
 
     @default || request.headers['Accept'].include?(header)
   end

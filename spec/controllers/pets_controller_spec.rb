@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe Api::V1::PetsController do
+describe Api::V1::RobotsController do
 
-  user = FactoryGirl.create(:user)
-  let(:pet) { FactoryGirl.create(:pet)}
+  let(:user) { FactoryGirl.create(:user) }
+  let(:robot) { FactoryGirl.create(:robot, user: user)}
   context 'when user is authenticated' do
     before :each do
       authenticate_headers(request.headers)
@@ -20,7 +20,7 @@ describe Api::V1::PetsController do
 
     describe 'GET show' do
       it 'on success responds with a 200 success status' do
-        get :show, id: pet.id
+        get :show, id: robot.id
 
         expect(response).to have_http_status(:success)
       end

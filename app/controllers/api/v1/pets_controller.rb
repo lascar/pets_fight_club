@@ -1,46 +1,46 @@
-class Api::V1::PetsController < InheritedResources::Base
+class Api::V1::RobotsController < InheritedResources::Base
   def index
-    pets = Pet.all
+    robots = Robot.all
     respond_to do |format|
-      format.json { render json: pets }
+      format.json { render json: robots }
     end
   end
 
   def show
-    pet = Pet.find(params[:id])
+    robot = Robot.find(params[:id])
     respond_to do |format| 
-      format.json { render json: pet }
+      format.json { render json: robot }
     end
   end
 
   def create
-    pet = Pet.new(pet_params)
-    if pet.save
-      pet.update_attributes({user_id: current_user.id})
+    robot = Robot.new(robot_params)
+    if robot.save
+      robot.update_attributes({user_id: current_user.id})
     else
-      pet = {error: pet.errors}
+      robot = {error: robot.errors}
     end
     respond_to do |format| 
-      format.json { render json: pet }
+      format.json { render json: robot }
     end
   end
 
   def update
-    pet = Pet.find(params[:id])
-    if pet.user_id == current_user.id
-      pet.update(pet_params)
+    robot = Robot.find(params[:id])
+    if robot.user_id == current_user.id
+      robot.update(robot_params)
     else
-      pet = {error: 'not your pet'}
+      robot = {error: 'not your robot'}
     end
     respond_to do |format|
-      format.json { render json: pet}
+      format.json { render json: robot}
     end
   end
 
   private
 
-    def pet_params
-      params.require(:pet).permit(:name, :age, :pet_type)
+    def robot_params
+      params.require(:robot).permit(:name, :age, :robot_type)
     end
 end
 
