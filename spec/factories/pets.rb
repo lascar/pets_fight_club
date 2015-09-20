@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :pet do
+  factory :robot do
     sequence(:name) { |n| "name#{n}" }
     birth_day Time.now - 2.years
     user
@@ -8,7 +8,7 @@ FactoryGirl.define do
     end
   end
 
-  factory :pet_invalid_request, class: Pet do
+  factory :robot_invalid_request, class: Robot do
     name nil
   end
 end

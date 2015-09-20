@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :fight do
-    association :pet1, :factory => :pet
-    association :pet2, :factory => :pet
+    association :robot1, :factory => :robot
+    association :robot2, :factory => :robot
     win1 true
     fight_time {Time.now}
   end

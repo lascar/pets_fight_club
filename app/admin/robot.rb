@@ -1,6 +1,6 @@
-ActiveAdmin.register Pet do
+ActiveAdmin.register Robot do
 
-  permit_params :name, :user_id, :age, :pet_type, :victory_rate
+  permit_params :name, :user_id, :age, :robot_type, :victory_rate
   #belongs_to :user
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

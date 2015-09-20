@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Pet, :type => :model do
+RSpec.describe Robot, :type => :model do
   it { expect(subject).to have_db_index(:name) }
 
   it { expect(subject).to validate_presence_of :name }

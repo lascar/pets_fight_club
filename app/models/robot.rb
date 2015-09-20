@@ -1,4 +1,4 @@
-class Pet < ActiveRecord::Base
+class Robot < ActiveRecord::Base
   belongs_to :user
   has_many :fights
   validates :name, presence: true, uniqueness: true

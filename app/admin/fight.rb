@@ -1,6 +1,6 @@
 ActiveAdmin.register Fight do
 
-  permit_params :pet1_id, :pet2_id, :pet_win_id, :fight_time
+  permit_params :robot1_id, :robot2_id, :robot_win_id, :fight_time
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
