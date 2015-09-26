@@ -63,6 +63,7 @@ group :test do
   gem 'json-schema', '~> 2.5'
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
+  gem 'json-schema-rspec'
 end
 
 group :development, :test do

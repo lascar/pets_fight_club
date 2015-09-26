@@ -4,6 +4,17 @@ describe Api::V1::RobotsController do
 
   let(:user) { FactoryGirl.create(:user) }
   let(:robot) { FactoryGirl.create(:robot, user: user)}
+  context 'when user is not authenticated' do
+    describe "GET index" do
+      it 'responds with a 401 error status' do
+
+        get :index, :format => :json
+
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
+  end
+  
   context 'when user is authenticated' do
     before :each do
       authenticate_headers(request.headers)

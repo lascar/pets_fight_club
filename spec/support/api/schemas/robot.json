@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": ["robot"],
+  "properties": {
+    "robot" : {
+      "type" : "object",
+      "required" : [
+        "name",
+        "user_id",
+        "birth_day"
+      ],
+      "properties" : {
+        "name"  : { "type" : "string" },
+        "user_id"  : { "type" : "integer" },
+        "birth_day" : { "type" :  "string", "format": "date-time" }
+      }
+    }
+  }
+}
