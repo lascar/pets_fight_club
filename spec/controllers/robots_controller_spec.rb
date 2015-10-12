@@ -16,6 +16,7 @@ describe Api::V1::RobotsController do
   
   context 'when user is authenticated' do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:robot) {FactoryGirl.create('robot', user: user)}
     before :each do
       authenticate_headers(request.headers)
     end
@@ -28,11 +29,11 @@ describe Api::V1::RobotsController do
           expect(response).to have_http_status(:success)
         end
 
-        skip 'obtains a list of the items' do
-          FactoryGirl.create('robot')
+        it 'obtains a list of the items' do
+          expected_user_email = user.email
           get :index
-
-          expect(response).to match_response_schema('robots', :list => true)
+          expect(JSON.parse(response.body)['robots'].last['user']['email']).to eq(expected_user_email)
+          expect(JSON.parse(response.body)['robots'].count).to eq(1)
         end
       end
 
