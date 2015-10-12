@@ -61,10 +61,8 @@ group :test do
   # collection matchers
   gem 'rspec-collection_matchers'
  
-  gem 'json-schema'
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
-  gem 'json-matchers', require: false
 end
 
 group :development, :test do
