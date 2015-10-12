@@ -2,9 +2,6 @@ ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation
 
   after_create do |user|
-    puts '#######################################'
-    puts 'user : ' + user.to_s
-    puts '#######################################'
     UserMailer.welcome_email(user).deliver_later
   end
 

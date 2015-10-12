@@ -1,7 +1,13 @@
 ActiveAdmin.register Robot do
 
-  permit_params :name, :user_id, :age, :robot_type, :victory_rate
-  #belongs_to :user
+  index do
+    column :name
+    column :age
+    column :robot_type
+    column :victory_rate
+    column :user
+  end
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Api::V1::RobotsController do
 
-  let(:user) { FactoryGirl.create(:user) }
   let(:robot) { FactoryGirl.create(:robot, user: user)}
   context 'when user is not authenticated' do
     describe "GET index" do
@@ -16,6 +15,7 @@ describe Api::V1::RobotsController do
   end
   
   context 'when user is authenticated' do
+    let(:user) { FactoryGirl.create(:user) }
     before :each do
       authenticate_headers(request.headers)
     end
@@ -26,6 +26,13 @@ describe Api::V1::RobotsController do
           get :index
 
           expect(response).to have_http_status(:success)
+        end
+
+        skip 'obtains a list of the items' do
+          FactoryGirl.create('robot')
+          get :index
+
+          expect(response).to match_response_schema('robots', :list => true)
         end
       end
 

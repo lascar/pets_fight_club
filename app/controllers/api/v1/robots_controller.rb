@@ -2,7 +2,7 @@ class Api::V1::RobotsController < InheritedResources::Base
   def index
     robots = Robot.all
     respond_to do |format|
-      format.json { render json: robots }
+      format.json { render json: robots, include: 'user' }
     end
   end
 

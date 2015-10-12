@@ -11,6 +11,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'simple_token_authentication', '~> 1.8.0'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -60,10 +61,10 @@ group :test do
   # collection matchers
   gem 'rspec-collection_matchers'
  
-  gem 'json-schema', '~> 2.5'
+  gem 'json-schema'
   gem 'spring-commands-rspec'
   gem 'database_cleaner'
-  gem 'json-schema-rspec'
+  gem 'json-matchers', require: false
 end
 
 group :development, :test do
